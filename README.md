@@ -21,7 +21,7 @@ Maintained toolchain notes (details in [.obvious/local-dev.md](.obvious/local-de
 - webpack 4 needs `NODE_OPTIONS=--openssl-legacy-provider` on Node ≥ 17; the build scripts wire this via `cross-env`.
 - Styles compile with Dart Sass (`sass`) instead of the retired native `node-sass` module.
 - `npm test` runs Jest behavior tests for the pure-logic modules under `app/utilities` (no GUI runtime tests).
-- CI runs lint + build on Node 20 via GitHub Actions (`.github/workflows/ci.yml`).
+- CI runs lint + build + Jest tests on Node 20 via GitHub Actions (`.github/workflows/ci.yml`).
 
 - Unlimited public/private snippets
 - Unlimited tags

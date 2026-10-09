@@ -27,7 +27,7 @@ Optional, for GitHub login at runtime: duplicate `configs/accountDummy.js` to `c
 | `yarn build` | `cross-env NODE_OPTIONS=--openssl-legacy-provider npm run webpack-dev` — dev bundle into `bundle/`. |
 | `yarn webpack-prod` | `cross-env NODE_OPTIONS=--openssl-legacy-provider webpack --mode production`. |
 | `yarn webpack-watch` | Same as webpack-prod's env but `webpack --watch`. |
-| `npm test` | Post-test PR: runs the Jest behavior suite under `app/utilities/**/__tests__/` (the base script still aliases the dev webpack build until that PR merges). |
+| `npm test` | `jest` — runs the Jest behavior suite under `app/utilities/**/__tests__/` (repointed from a legacy webpack-dev alias by PR #3). |
 | `yarn start` | `electron ./main.js` — run after `yarn build` so `bundle/app.bundle.js` exists. |
 | `yarn license` | `license-checker --production ...` — regenerates `license.json`. |
 
