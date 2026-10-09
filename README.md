@@ -5,12 +5,23 @@
 
 ![](./docs/img/new_logo.png)
 
-[![Build Status](https://travis-ci.org/hackjutsu/Lepton.svg?branch=master)](https://travis-ci.org/hackjutsu/Lepton)
+[![CI](https://github.com/dbhagen/Lepton/actions/workflows/ci.yml/badge.svg)](https://github.com/dbhagen/Lepton/actions/workflows/ci.yml)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
-[![Dependency Status](https://david-dm.org/hackjutsu/Lepton.svg?style=flat-square)](https://david-dm.org/hackjutsu/Lepton)
 [![MIT Licensed](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](https://opensource.org/licenses/MIT)
 
 **Lepton** is a lean code snippet manager based on *GitHub Gist*. [Check out its latest release.](https://github.com/hackjutsu/Lepton/releases)
+
+## Fork status
+
+This repository is a community maintenance fork of [hackjutsu/Lepton](https://github.com/hackjutsu/Lepton), which remains the active upstream project. This fork is based on upstream v1.9.1 (September 2020) and is limited to maintenance work: toolchain compatibility, documentation, and tests. It publishes no releases — download links on this page point to upstream releases.
+
+Maintained toolchain notes (details in [.obvious/local-dev.md](.obvious/local-dev.md)):
+
+- Build and test on **Node 20** with **classic Yarn (1.x)**: `yarn install`, `yarn lint`, `yarn build`, `yarn start`.
+- webpack 4 needs `NODE_OPTIONS=--openssl-legacy-provider` on Node ≥ 17; the build scripts wire this via `cross-env`.
+- Styles compile with Dart Sass (`sass`) instead of the retired native `node-sass` module.
+- `npm test` runs Jest behavior tests for the pure-logic modules under `app/utilities` (no GUI runtime tests).
+- CI runs lint + build on Node 20 via GitHub Actions (`.github/workflows/ci.yml`).
 
 - Unlimited public/private snippets
 - Unlimited tags
@@ -82,7 +93,7 @@ Check out the [configuration docs](https://github.com/hackjutsu/Lepton/wiki/Conf
 - Download released binaries(macOS/Windows/Linux) [here](https://github.com/hackjutsu/Lepton/releases).
 - Install via Homebrew (macOS)
 ```bash
-brew cask install lepton
+brew install --cask lepton
 ```
 - Install via SnapCraft (Linux)
 
