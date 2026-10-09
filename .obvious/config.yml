@@ -1,0 +1,34 @@
+# .obvious/config.yml — per-repo Autobuild policy for dbhagen/Lepton
+# Schema: https://help.obvious.ai/autobuild/config-yml-reference
+# Only actively-consumed sections are set. `preview` (none exists), `ci` (no
+# generated files), and the reserved sections (notifications/release/owners/
+# runbooks) are intentionally absent.
+branches:
+  defaultBase: master
+
+pr:
+  merge:
+    method: squash
+
+reviews:
+  automated:
+    enabled: true
+  routing: # first-match-wins; catch-all last
+    rules:
+      - name: lockfile-changes
+        match:
+          - 'yarn.lock'
+        mode: none
+      - name: all-other-changes
+        match:
+          - '**'
+        mode: single
+
+qa:
+  guidePaths:
+    - .obvious/QA.md
+  automationPaths:
+    - .github/workflows/ci.yml
+
+triageProjects:
+  reviewProjectId: prj_kb4PDfR1
