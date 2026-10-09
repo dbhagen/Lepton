@@ -10,7 +10,6 @@ Verified 2026-10-09 by listing directories (depth ≤ 2) and reading key files a
 ├── webpack.config.js    webpack 4 config: entry app/index.js, target electron-renderer, output bundle/
 ├── .eslintrc.js         ESLint: standard config + react plugin, babel-eslint parser
 ├── .eslintignore        Ignores dist, node_modules, webpack*.config.js
-├── .travis.yml          Legacy Travis CI (Node 10) — dead service; removed by the toolchain PR
 ├── .all-contributorsrc  Contributor registry backing the README ALL-CONTRIBUTORS table
 ├── configs/
 │   ├── accountDummy.js  Placeholder OAuth client_id/client_secret used when account.js is absent
